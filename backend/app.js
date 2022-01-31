@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const { getAllPoops } = require("./routes/poops");
 const connectDB = require("./db/connect");
 const request = require("./middleware/request");
 const poops = require("./routes/poops");
