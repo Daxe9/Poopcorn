@@ -2,9 +2,7 @@ const User = require("../models/user-model");
 const asyncWrapper = require("../middleware/async");
 const bcrypt = require("bcrypt");
 const _ = require("lodash");
-const getAllPoopOfMe = asyncWrapper(async (req, res) => {
-
-});
+const getAllPoopOfMe = asyncWrapper(async (req, res) => {});
 
 const createUser = asyncWrapper(async (req, res) => {
     let user = await User.findOne({ username: req.body.username });

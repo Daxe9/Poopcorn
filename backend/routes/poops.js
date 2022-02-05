@@ -8,8 +8,15 @@ const {
     deletePoop,
 } = require("../controller/poops");
 
-router.route("/").get([authentication, getAllPoops]).post([authentication, createPoop]);
+router
+    .route("/")
+    .get([authentication, getAllPoops])
+    .post([authentication, createPoop]);
 
-router.route("/:id").get([authentication, getSinglePoop]).patch([authentication, updatePoop]).delete([authentication, deletePoop]);
+router
+    .route("/:id")
+    .get([authentication, getSinglePoop])
+    .patch([authentication, updatePoop])
+    .delete([authentication, deletePoop]);
 
 module.exports = router;
