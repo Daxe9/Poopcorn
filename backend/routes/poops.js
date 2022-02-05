@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const authentication = require("../middleware/authentication");
 const {
     getAllPoops,
     getSinglePoop,
@@ -7,8 +8,8 @@ const {
     deletePoop,
 } = require("../controller/poops");
 
-router.route("/").get(getAllPoops).post(createPoop);
+router.route("/").get([authentication, getAllPoops]).post([authentication, createPoop]);
 
-router.route("/:id").get(getSinglePoop).patch(updatePoop).delete(deletePoop);
+router.route("/:id").get([authentication, getSinglePoop]).patch([authentication, updatePoop]).delete([authentication, deletePoop]);
 
 module.exports = router;

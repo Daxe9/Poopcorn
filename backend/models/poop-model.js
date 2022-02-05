@@ -6,8 +6,9 @@ const poopSchema = new mongoose.Schema({
         maxlength: 50,
         required: true,
     },
-    form: {
-        type: String,
+    type: {
+        type: Number,
+        default: 3,
     },
     vegetable: {
         type: Boolean,
