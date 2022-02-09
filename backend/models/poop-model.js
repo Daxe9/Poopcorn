@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const poopSchema = new mongoose.Schema({
     date: {
         type: Date,
-        default: new Date().toLocaleString()
+        default: new Date().toLocaleString(),
     },
     color: {
         type: String,

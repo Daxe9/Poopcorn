@@ -5,7 +5,9 @@ const bcrypt = require("bcrypt");
 const logIn = asyncWrapper(async (req, res) => {
     const user = await User.findOne({ username: req.body.username });
     if (!user) {
-        return res.status(400).json({ message: "Invalid username or passoword." });
+        return res
+            .status(400)
+            .json({ message: "Invalid username or passoword." });
     }
 
     const isValidPassword = await bcrypt.compare(
@@ -14,7 +16,9 @@ const logIn = asyncWrapper(async (req, res) => {
     );
 
     if (!isValidPassword) {
-        return res.status(400).json({ message: "Invalid usename or passoword." });
+        return res
+            .status(400)
+            .json({ message: "Invalid usename or passoword." });
     }
 
     const token = user.generateAuthToken();
